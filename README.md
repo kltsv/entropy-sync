@@ -58,3 +58,6 @@ all daemon checksums embedded. Native assets and `SHA256SUMS` belong to the same
 immutable release. Publish a new tag for every binary change.
 
 MIT licensed. Dependency licenses remain their respective owners'.
+
+Release immutability is enabled on GitHub. CI uploads all assets to a draft
+then publishes; rerunning a tag never replaces an existing release.

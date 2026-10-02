@@ -59,8 +59,14 @@ jobs:
         with:
           name: brat-release
           path: dist/release/*
-      - uses: softprops/action-gh-release@v2
+      - name: Publish immutable release
         if: github.ref_type == 'tag'
-        with:
-          files: dist/release/*
-          generate_release_notes: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            echo "Release already exists; keeping its assets unchanged."
+          else
+            gh release create "$GITHUB_REF_NAME" dist/release/* --draft --verify-tag --generate-notes
+            gh release edit "$GITHUB_REF_NAME" --draft=false
+          fi
