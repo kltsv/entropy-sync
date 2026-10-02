@@ -26,7 +26,7 @@ void main() {
       // CouchDB behavior) — abort it once the request shape is captured.
       final cancel = HttpCancelToken();
       final parked = r.replicator.pullOnce(
-          longpoll: true, heartbeatMs: 60, timeoutMs: 150, cancelToken: cancel);
+          longpoll: true, heartbeatMs: 1000, timeoutMs: 150, cancelToken: cancel);
       await waitUntil(() => logFor(emulator, '_changes').isNotEmpty,
           reason: 'longpoll request received');
 

@@ -101,8 +101,8 @@ packages:
     dependency: "direct main"
     description:
       path: "packages/entropy_hist"
-      ref: ae967300d645300308df6e238f586045ad1406fb
-      resolved-ref: ae967300d645300308df6e238f586045ad1406fb
+      ref: "0a1b6697208046b025dbf8aa4cfe0ee6200d64af"
+      resolved-ref: "0a1b6697208046b025dbf8aa4cfe0ee6200d64af"
       url: "https://github.com/kltsv/entropy-hist.git"
     source: git
     version: "0.1.0"

@@ -51,7 +51,7 @@ void main() {
 
       var completed = false;
       final parked = r.transport
-          .changes(since: '0', longpoll: true, heartbeatMs: 50, timeoutMs: 100)
+          .changes(since: '0', longpoll: true, heartbeatMs: 1000, timeoutMs: 100)
           .then((batch) {
         completed = true;
         return batch;
@@ -108,7 +108,7 @@ void main() {
 
       final cancel = HttpCancelToken();
       final parked = r.transport.changes(
-          since: '0', longpoll: true, heartbeatMs: 100, cancelToken: cancel);
+          since: '0', longpoll: true, heartbeatMs: 1000, cancelToken: cancel);
       await waitUntil(() => logFor(emulator, '_changes').isNotEmpty,
           reason: 'longpoll parked on the server');
 
@@ -129,7 +129,7 @@ void main() {
       final emulator = CouchEmulator();
       await emulator.start();
       final server = emulator.db('vault');
-      final r = makeReplica(emulator, replicaId: 'R', heartbeatMs: 60);
+      final r = makeReplica(emulator, replicaId: 'R', heartbeatMs: 1000);
       addTearDown(() async {
         await r.dispose();
         await emulator.stop();

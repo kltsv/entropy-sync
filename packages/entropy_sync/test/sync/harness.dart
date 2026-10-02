@@ -60,7 +60,7 @@ TestReplica makeReplica(
   Duration pushDebounce = const Duration(milliseconds: 120),
   Duration backoffBase = const Duration(milliseconds: 40),
   Duration backoffCap = const Duration(milliseconds: 500),
-  int heartbeatMs = 100,
+  int heartbeatMs = 1000,
   int longpollTimeoutMs = 250,
   int batchLimit = 200,
 }) {
