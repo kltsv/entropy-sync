@@ -1,0 +1,23 @@
+name: entropy_sync
+description: >-
+  The pure-Dart sync library of the entropy stack: the app-agnostic document
+  model, an offline-first local replica with a revision tree, the CouchDB
+  replication protocol (changes / revs-diff / bulk-docs / checkpoints),
+  deterministic conflict resolution, and end-to-end encryption. Implements
+  the `vault_sync` and `vault_crypto` specs. No Flutter, no sockets of its
+  own — the host supplies transport.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  collection: ^1.19.0
+  crypto: ^3.0.0
+  cryptography: ^2.7.0
+  path: ^1.9.0
+
+dev_dependencies:
+  lints: ^5.0.0
+  test: ^1.25.0

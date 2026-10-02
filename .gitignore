@@ -1,0 +1,20 @@
+node_modules/
+main.js
+main.js.map
+
+# Local dependencies and agent mirrors
+.deps/
+.release-assets.json
+.artifacts/
+**/pubspec_overrides.yaml
+spec_sources_overrides.json
+.claude/
+.codex/
+.opencode/
+CLAUDE.md
+__pycache__/
+*.pyc
+.DS_Store
+
+/bin/
+dist/

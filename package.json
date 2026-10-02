@@ -1,0 +1,37 @@
+{
+  "name": "entropy-sync-obsidian",
+  "version": "0.2.0",
+  "description": "Obsidian control/installer plugin for editor-agnostic vault synchronization — installs and drives the entropyd daemon; runs no sync of its own.",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc --noEmit && node esbuild.config.mjs production",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "pretest": "node tool/checkout-history.mjs",
+    "native": "node tool/engine.mjs",
+    "release:native": "node tool/native-release.mjs",
+    "release:assemble": "node tool/assemble-release.mjs"
+  },
+  "keywords": [
+    "obsidian",
+    "sync",
+    "couchdb",
+    "entropy"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/diff-match-patch": "^1.0.36",
+    "@types/node": "^20.11.0",
+    "diff-match-patch": "^1.0.5",
+    "esbuild": "^0.28.2",
+    "obsidian": "^1.5.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kltsv/entropy-sync.git"
+  }
+}

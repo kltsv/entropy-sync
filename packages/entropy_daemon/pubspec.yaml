@@ -1,0 +1,32 @@
+name: entropy_daemon
+description: >-
+  The headless desktop daemon (entropyd) of the entropy-sync stack. Owns
+  each vault folder, drives the entropy_sync replication client both ways
+  against CouchDB, is the sole writer of per-file history, detects renames, serves
+  multiple vaults, and exposes an authenticated localhost control channel that
+  interchangeable front-ends share. Implements the `vault_daemon` spec.
+version: 0.2.0
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  args: ^2.5.0
+  crypto: ^3.0.0
+  cryptography: ^2.7.0
+  entropy_hist:
+    git:
+      url: https://github.com/kltsv/entropy-hist.git
+      ref: ae967300d645300308df6e238f586045ad1406fb
+      path: packages/entropy_hist
+  entropy_sync:
+    path: ../entropy_sync
+  http: ^1.2.0
+  path: ^1.9.0
+  shelf: ^1.4.0
+  watcher: ^1.1.0
+
+dev_dependencies:
+  lints: ^5.0.0
+  test: ^1.25.0

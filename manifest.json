@@ -1,0 +1,9 @@
+{
+  "id": "entropy-sync-obsidian",
+  "name": "Entropy Sync",
+  "version": "0.2.0",
+  "minAppVersion": "1.4.0",
+  "description": "Control and install the entropyd daemon for editor-agnostic, end-to-end-encrypted vault synchronization. Runs no sync of its own.",
+  "author": "entropy",
+  "isDesktopOnly": true
+}
