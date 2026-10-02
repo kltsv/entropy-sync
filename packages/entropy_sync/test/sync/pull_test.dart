@@ -317,6 +317,10 @@ void main() {
       await b.engine.start();
       await waitUntil(() => b.statuses.any((s) => s.online),
           reason: 'initial online');
+      await waitUntil(
+          () => logFor(emulator, '_changes')
+              .any((req) => req.query['feed'] == 'longpoll'),
+          reason: 'longpoll parked before the outage');
       final requestsBeforeOutage = logFor(emulator, '_changes').length;
 
       failing = true;
